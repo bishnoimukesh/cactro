@@ -1,0 +1,88 @@
+.story-viewer {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(82, 79, 79);
+    z-index: 10;
+    overflow: hidden;
+    max-width: inherit;
+    max-height: inherit
+}
+
+.story-viewer-image {
+    flex: 1;
+    width: 100%;
+    object-fit: cover;
+}
+
+.story-viewer-placeholder {
+    flex: 1;
+    width: 100%;
+}
+
+.story-viewer-top {
+    position: absolute;
+    top: 20px;
+    left: 12px;
+    right: 12px;
+    display: flex;
+    align-items: center;
+    z-index: 15;
+    gap: 8px;
+    color: white;
+}
+
+.story-viewer-avatar {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    padding: 0.25rem;
+}
+
+.story-progress-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0.25rem;
+    padding: 0.25rem;
+    display: flex;
+    gap: 4px;
+    z-index: 1500;
+}
+
+.progress-container {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.progress-filled {
+    height: 100%;
+    background-color: red;
+    width: 0%;
+    transition: width 0.1s linear;
+}
+
+.story-viewer-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.story-viewer-close:hover {
+    background: rgba(0, 0, 0, 0.8);
+}

@@ -1,0 +1,38 @@
+[
+    {
+      "username": "Candid",
+      "avatar": "/images/avatar1.jpg",
+      "image": "/images/story1.jpg",
+      "time": "59m"
+    },
+    {
+      "username": "Sprinkles",
+      "avatar": "/images/avatar2.jpg",
+      "image": ["/images/story1a.jpg", "/images/story1b.jpg", "/images/story1a.jpg", "/images/story1b.jpg"],
+      "time": "5m"
+    },
+    {
+      "username": "Sprinkles",
+      "avatar": "/images/avatar2.jpg",
+      "image": ["/images/story1a.jpg", "/images/story1b.jpg"],
+      "time": "55m"
+    },
+    {
+      "username": "Sprinkles",
+      "avatar": "/images/avatar2.jpg",
+      "image": "/images/story2.jpg",
+      "time": "35m"
+    },
+    {
+      "username": "Sprinkles",
+      "avatar": "/images/avatar2.jpg",
+      "image": ["/images/story1a.jpg", "/images/story1b.jpg"],
+      "time": "52m"
+    },
+    {
+      "username": "Sprinkles",
+      "avatar": "/images/avatar2.jpg",
+      "image": "/images/story2.jpg",
+      "time": "15m"
+    }
+  ]
