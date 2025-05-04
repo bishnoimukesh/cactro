@@ -1,14 +1,14 @@
 .story-avatar-container {
     text-align: center;
-    width: 65px;
+    width: 3.75;
     flex-shrink: 0;
 }
 
 .story-avatar-border {
-    width: 60px;
-    height: 60px;
+    width: 3.75rem;
+    height: 3.75rem;
     border-radius: 50%;
-    padding: 2px;
+    padding: 0.125rem;
     background: black;
     display: flex;
     align-items: center;
@@ -17,16 +17,15 @@
 }
 
 .story-avatar-img {
-    width: 54px;
-    height: 54px;
+    width: 3.375rem;
+    height: 3.375rem;
     border-radius: 50%;
     object-fit: cover;
     display: block;
-    border: 2px solid #fff;
+    border: 0.125rem solid #fff;
 }
 
 .story-avatar-username {
-    font-size: 12px;
-    margin-top: 4px;
-    color: #444;
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
 }
