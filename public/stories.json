@@ -1,38 +1,38 @@
 [
     {
       "username": "Candid",
-      "avatar": "/images/avatar1.jpg",
-      "image": "/images/story1.jpg",
+      "avatar": "https://tinyurl.com/useravatar-1",
+      "image": ["https://tinyurl.com/userstory-8", "https://tinyurl.com/userstory-2"],
       "time": "59m"
     },
     {
       "username": "Sprinkles",
-      "avatar": "/images/avatar2.jpg",
-      "image": ["/images/story1a.jpg", "/images/story1b.jpg", "/images/story1a.jpg", "/images/story1b.jpg"],
+      "avatar": "https://tinyurl.com/useravatar-2",
+      "image": ["https://tinyurl.com/userstory-6", "https://tinyurl.com/userstory-3", "https://tinyurl.com/userstory-5"],
       "time": "5m"
     },
     {
       "username": "mir",
-      "avatar": "/images/avatar2.jpg",
-      "image": ["/images/story1a.jpg", "/images/story1b.jpg"],
+      "avatar": "https://tinyurl.com/useravatar-2",
+      "image": "https://tinyurl.com/userstory-1",
       "time": "55m"
     },
     {
       "username": "Bir",
-      "avatar": "/images/avatar2.jpg",
-      "image": "/images/story2.jpg",
+      "avatar": "https://tinyurl.com/useravatar-1",
+      "image": "https://tinyurl.com/userstory-5",
       "time": "35m"
     },
     {
       "username": "Ram",
-      "avatar": "/images/avatar2.jpg",
-      "image": ["/images/story1a.jpg", "/images/story1b.jpg"],
+      "avatar": "https://tinyurl.com/useravatar-2",
+      "image": ["https://tinyurl.com/userstory-3", "https://tinyurl.com/userstory-4"],
       "time": "52m"
     },
     {
       "username": "Shyam",
-      "avatar": "/images/avatar2.jpg",
-      "image": "/images/story2.jpg",
+      "avatar": "https://tinyurl.com/useravatar-1",
+      "image": "https://tinyurl.com/userstory-2",
       "time": "15m"
     }
   ]

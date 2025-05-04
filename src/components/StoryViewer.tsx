@@ -84,6 +84,18 @@ const StoryViewer = ({ stories, index, onClose }: Props) => {
   const goToPrev = () => {
     if (imageIndex > 0) {
       setImageIndex(imageIndex - 1);
+    } else {
+      let prevUserIndex = storyIndex - 1;
+      while (prevUserIndex >= 0 && stories[prevUserIndex].username === selectedStory.username) {
+        prevUserIndex--;
+      }
+  
+      if (prevUserIndex >= 0) {
+        setStoryIndex(prevUserIndex);
+        setImageIndex(stories[prevUserIndex].image.length - 1);
+      } else {
+        console.log("Already at the first story");
+      }
     }
   };
 
