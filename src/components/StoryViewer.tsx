@@ -12,11 +12,25 @@ const StoryViewer = ({ stories, index, onClose }: Props) => {
   const [storyIndex, setStoryIndex] = useState(index);
   const [imageIndex, setImageIndex] = useState(0);
   const [progress, setProgress] = useState<number[]>([]);
-  const timerRef = useRef<Timeout | null>(null);
+  const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
   const [imageError, setImageError] = useState(false);
 
-  const currentStory = stories[storyIndex] || { images: [] };
-  const images = currentStory.images || [];
+  const selectedStory = stories[storyIndex];
+
+  const userStories = [];
+  for (let i = storyIndex; i < stories.length; i++) {
+    if (
+      stories[i].username === selectedStory.username
+    ) {
+      userStories.push(stories[i]);
+    } else {
+      break;
+    }
+  }
+
+  const images = userStories.flatMap((story) =>
+    Array.isArray(story.image) ? story.image : [story.image]
+  );
 
   useEffect(() => {
     setImageIndex(0);
@@ -48,27 +62,28 @@ const StoryViewer = ({ stories, index, onClose }: Props) => {
     }, interval);
 
     return () => clearInterval(timerRef.current!);
-  }, [imageIndex, storyIndex]);
+  }, [imageIndex]);
 
   const goToNext = () => {
     if (imageIndex < images.length - 1) {
       setImageIndex(imageIndex + 1);
-    } else if (storyIndex < stories.length - 1) {
-      setStoryIndex(storyIndex + 1);
     } else {
-      onClose();
+      let nextUserIndex = storyIndex + 1;
+      while (nextUserIndex < stories.length && stories[nextUserIndex].username === selectedStory.username) {
+        nextUserIndex++;
+      }
+      if (nextUserIndex < stories.length) {
+        setStoryIndex(nextUserIndex);
+        setImageIndex(0);
+      } else {
+        onClose();
+      }
     }
   };
 
   const goToPrev = () => {
     if (imageIndex > 0) {
       setImageIndex(imageIndex - 1);
-    } else if (storyIndex > 0) {
-      const prevStory = stories[storyIndex - 1];
-      setStoryIndex(storyIndex - 1);
-      setImageIndex(prevStory.images.length - 1);
-    } else {
-      onClose();
     }
   };
 
@@ -99,12 +114,12 @@ const StoryViewer = ({ stories, index, onClose }: Props) => {
       {/* Top Info */}
       <div className="story-viewer-top">
         <img
-          src={currentStory.avatar}
+          src={selectedStory.avatar}
           alt="avatar"
           className="story-viewer-avatar"
         />
-        <span className="story-viewer-username">{currentStory.username}</span>
-        <span className="story-viewer-time">{currentStory.time}</span>
+        <span className="story-viewer-username">{selectedStory.username}</span>
+        <span className="story-viewer-time">{selectedStory.time}</span>
         <button
           className="story-viewer-close"
           onClick={(e) => {

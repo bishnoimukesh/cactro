@@ -10,7 +10,7 @@ interface Props {
 const StoryList = ({ stories, onSelect }: Props) => (
   <div className="story-list">
     {stories.map((story, i) => (
-      <StoryAvatar key={story.id} story={story} onClick={() => onSelect(i)} />
+      <StoryAvatar key={`${story.username}-${story.time}`} story={story} onClick={() => onSelect(i)} />
     ))}
   </div>
 );
