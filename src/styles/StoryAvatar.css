@@ -1,0 +1,31 @@
+.story-avatar-container {
+    text-align: center;
+    width: 3.75;
+    flex-shrink: 0;
+}
+
+.story-avatar-border {
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 50%;
+    padding: 0.125rem;
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #f9ce34, #ee2a7b, #6228d7);
+}
+
+.story-avatar-img {
+    width: 3.375rem;
+    height: 3.375rem;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    border: 0.125rem solid #fff;
+}
+
+.story-avatar-username {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}

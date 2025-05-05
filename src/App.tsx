@@ -1,12 +1,33 @@
-import './App.css'
+import { useEffect, useState } from "react";
+import { Story } from "./types";
+import Header from "./components/Header";
+import StoryList from "./components/StoryList";
+import StoryViewer from "./components/StoryViewer";
+import "./App.css";
 
-function App() {
+const App = () => {
+  const [stories, setStories] = useState<Story[]>([]);
+  const [viewingIndex, setViewingIndex] = useState<number | null>(null);
+
+  useEffect(() => {
+    fetch("/stories.json")
+      .then((res) => res.json())
+      .then(setStories);
+  }, []);
 
   return (
-    <>
-    <h1>Cactro Assignment</h1>
-    </>
-  )
-}
+    <div className="app-container">
+      <Header />
+      <StoryList stories={stories} onSelect={setViewingIndex} />
+      {viewingIndex !== null && (
+        <StoryViewer
+          stories={stories}
+          index={viewingIndex}
+          onClose={() => setViewingIndex(null)}
+        />
+      )}
+    </div>
+  );
+};
 
-export default App
+export default App;
